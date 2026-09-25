@@ -51,12 +51,12 @@ export function CalendarToolbar({
       : `${startMonth} ${startYear} – ${endMonth} ${endYear}`;
 
   return (
-    <div className="flex flex-col gap-3 p-3 rounded-[18px] bg-white/45 backdrop-blur-xl border border-white/65 shadow-[0_8px_32px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.8)] dark:bg-white/[0.05] dark:border-white/15">
+    <div className="flex flex-col gap-2 sm:gap-3 p-2.5 sm:p-3 rounded-[18px] bg-white/45 backdrop-blur-xl border border-white/65 shadow-[0_8px_32px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.8)] dark:bg-white/[0.05] dark:border-white/15">
       {/* Top Row: Date Navigation & Primary Actions */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div className="flex items-center justify-between gap-2">
         {/* Date Navigation Cluster */}
-        <div className="flex items-center gap-2 flex-wrap">
-          <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+          <div className="flex items-center gap-0.5 sm:gap-1">
             <Button
               variant="glass"
               size="icon-xs"
@@ -84,38 +84,51 @@ export function CalendarToolbar({
             Today
           </Button>
 
-          <h2 className="font-heading text-base font-bold text-foreground ml-1">
-            {monthYearLabel}
+          <h2 className="font-heading text-xs sm:text-base font-bold text-foreground ml-0.5 truncate">
+            <span className="sm:hidden">{startDate.toLocaleString("en-US", { month: "short" })} {startDate.getFullYear()}</span>
+            <span className="hidden sm:inline">{monthYearLabel}</span>
           </h2>
         </div>
 
-        {/* View Mode Segmented Controls & Create Booking Link */}
-        <div className="flex items-center gap-2 self-start sm:self-auto flex-wrap">
+        {/* View Mode Segmented Controls & Create Booking */}
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           {/* Segmented Day Range Toggle */}
-          <div className="flex items-center p-0.5 rounded-full bg-black/[0.04] backdrop-blur-md border border-white/50 overflow-x-auto touch-pan-x [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden dark:bg-white/[0.06] dark:border-white/10">
+          <div className="flex items-center p-0.5 rounded-full bg-black/[0.04] backdrop-blur-md border border-white/50 dark:bg-white/[0.06] dark:border-white/10">
             {(["7", "14", "30"] as CalendarViewMode[]).map((mode) => (
               <button
                 key={mode}
                 type="button"
                 onClick={() => onViewModeChange(mode)}
-                className={`px-3 py-1 rounded-full text-xs transition-all ${
+                className={`px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs transition-all ${
                   viewMode === mode
                     ? "bg-white/80 font-bold text-primary shadow-xs dark:bg-white/20 dark:text-sky-100"
                     : "font-normal text-muted-foreground hover:text-foreground"
                 }`}
               >
-                {mode === "30" ? "Month" : `${mode} Days`}
+                <span className="sm:hidden">{mode}d</span>
+                <span className="hidden sm:inline">{mode === "30" ? "Month" : `${mode} Days`}</span>
               </button>
             ))}
           </div>
 
-          {/* New Reservation Action (Full Page route) */}
+          {/* New Booking — icon only on mobile, full label on sm+ */}
+          <Link
+            href="/admin/bookings/create"
+            className={buttonVariants({
+              variant: "primary-glass",
+              size: "icon-xs",
+              className: "sm:hidden",
+            })}
+            title="New Booking"
+          >
+            <Plus className="size-3.5" />
+          </Link>
           <Link
             href="/admin/bookings/create"
             className={buttonVariants({
               variant: "primary-glass",
               size: "xs",
-              className: "gap-1 text-xs font-bold px-3",
+              className: "hidden sm:flex gap-1 text-xs font-bold px-3",
             })}
           >
             <Plus className="size-3" />
@@ -125,9 +138,9 @@ export function CalendarToolbar({
       </div>
 
       {/* Bottom Row: Search & Filters */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 pt-2 border-t border-white/40 dark:border-white/10">
+      <div className="flex items-center gap-2 pt-2 border-t border-white/40 dark:border-white/10">
         {/* Search Input */}
-        <div className="relative flex-1 max-w-sm">
+        <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-3.5 text-muted-foreground" />
           <input
             type="text"
@@ -138,8 +151,8 @@ export function CalendarToolbar({
           />
         </div>
 
-        {/* Dropdowns for Floor and Room Type */}
-        <div className="flex items-center gap-2 flex-wrap">
+        {/* Dropdowns — Floor and Room Type */}
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           {/* Floor Dropdown */}
           <DropdownMenu>
             <DropdownMenuTrigger

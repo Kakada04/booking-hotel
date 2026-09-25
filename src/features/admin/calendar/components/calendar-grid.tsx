@@ -68,8 +68,13 @@ export function CalendarGrid({
   const rangeEndDateStr = formatDate(rangeEndDate);
   const rangeStartDateStr = formatDate(startDate);
 
-  // Column width config
-  const colMinWidth = totalDays === 7 ? "min-w-[120px]" : totalDays === 14 ? "min-w-[80px]" : "min-w-[42px]";
+  // Column width config — tighter on mobile
+  const colMinWidth =
+    totalDays === 7
+      ? "min-w-[52px] sm:min-w-[100px]"
+      : totalDays === 14
+      ? "min-w-[38px] sm:min-w-[70px]"
+      : "min-w-[28px] sm:min-w-[38px]";
 
   return (
     <div className="relative rounded-[18px] bg-white/45 backdrop-blur-xl border border-white/65 shadow-[0_8px_32px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.8)] overflow-hidden dark:bg-white/[0.05] dark:border-white/15">
@@ -78,21 +83,21 @@ export function CalendarGrid({
           {/* Header Row: Room Label & Dates */}
           <div className="flex border-b border-white/50 bg-white/30 backdrop-blur-md sticky top-0 z-40 dark:border-white/10 dark:bg-white/[0.04]">
             {/* Sticky Rooms Column Header */}
-            <div className="w-44 sm:w-52 shrink-0 p-3 sticky left-0 z-50 bg-white/80 backdrop-blur-xl border-r border-white/50 flex items-center justify-between dark:bg-slate-950/85 dark:border-white/10">
+            <div className="w-28 sm:w-44 md:w-52 shrink-0 p-2 sm:p-3 sticky left-0 z-50 bg-white/80 backdrop-blur-xl border-r border-white/50 flex items-center justify-between dark:bg-slate-950/85 dark:border-white/10">
               <span className="font-heading text-xs font-bold text-foreground">
-                Room Inventory
+                Rooms
               </span>
-              <span className="text-xs font-normal text-muted-foreground">
+              <span className="text-xs font-normal text-muted-foreground hidden sm:inline">
                 {rooms.length} units
               </span>
             </div>
 
             {/* Date Headers */}
             <div className="flex flex-1">
-              {dateColumns.map((col) => (
+            {dateColumns.map((col) => (
                 <div
                   key={col.dateStr}
-                  className={`flex-1 ${colMinWidth} p-2 text-center border-r border-white/30 dark:border-white/10 transition-colors ${
+                  className={`flex-1 ${colMinWidth} p-1 sm:p-2 text-center border-r border-white/30 dark:border-white/10 transition-colors ${
                     col.isToday
                       ? "bg-primary/15 font-bold text-primary dark:bg-primary/20"
                       : col.isWeekend
@@ -100,14 +105,14 @@ export function CalendarGrid({
                       : ""
                   }`}
                 >
-                  <span className={`block text-xs uppercase tracking-wider ${col.isToday ? "font-bold text-primary" : "font-normal text-muted-foreground"}`}>
+                  <span className={`block text-[9px] sm:text-xs uppercase tracking-wider ${col.isToday ? "font-bold text-primary" : "font-normal text-muted-foreground"}`}>
                     {col.dayName}
                   </span>
                   <div className="flex items-center justify-center gap-1 mt-0.5">
                     <span
-                      className={`text-sm ${
+                      className={`text-xs sm:text-sm ${
                         col.isToday
-                          ? "size-6 rounded-full bg-primary text-white font-bold flex items-center justify-center shadow-xs dark:text-sky-950"
+                          ? "size-5 sm:size-6 rounded-full bg-primary text-white font-bold flex items-center justify-center shadow-xs dark:text-sky-950"
                           : "font-bold text-foreground"
                       }`}
                     >
@@ -115,7 +120,7 @@ export function CalendarGrid({
                     </span>
                   </div>
                   {col.isToday && (
-                    <span className="text-[10px] uppercase font-bold text-primary tracking-widest block -mt-0.5">
+                    <span className="hidden sm:block text-[10px] uppercase font-bold text-primary tracking-widest -mt-0.5">
                       Today
                     </span>
                   )}
@@ -139,25 +144,24 @@ export function CalendarGrid({
                   className="flex items-stretch group/row hover:bg-white/20 dark:hover:bg-white/[0.02] transition-colors"
                 >
                   {/* Sticky Room Identification Column */}
-                  <div className="w-44 sm:w-52 shrink-0 p-3 sticky left-0 z-30 bg-white/70 backdrop-blur-xl border-r border-white/50 flex flex-col justify-center dark:bg-slate-950/80 dark:border-white/10">
+                  <div className="w-28 sm:w-44 md:w-52 shrink-0 p-2 sm:p-3 sticky left-0 z-30 bg-white/70 backdrop-blur-xl border-r border-white/50 flex flex-col justify-center dark:bg-slate-950/80 dark:border-white/10">
                     <div className="flex items-center justify-between">
                       <Link
                         href={`/admin/rooms/${room.id}`}
-                        className="font-bold text-sm text-foreground hover:text-primary transition-colors flex items-center gap-1.5"
+                        className="font-bold text-xs sm:text-sm text-foreground hover:text-primary transition-colors"
                       >
-                        <span>Room {room.roomNumber}</span>
+                        <span>{room.roomNumber}</span>
                       </Link>
-                      <span className="text-xs font-normal text-muted-foreground">
-                        Floor {room.floor}
+                      <span className="text-[10px] font-normal text-muted-foreground hidden sm:inline">
+                        F{room.floor}
                       </span>
                     </div>
-
-                    <div className="flex items-center justify-between mt-1 text-xs">
-                      <span className="font-normal text-muted-foreground truncate max-w-[110px]">
+                    <div className="flex items-center justify-between mt-0.5">
+                      <span className="font-normal text-[10px] sm:text-xs text-muted-foreground truncate max-w-[64px] sm:max-w-[110px]">
                         {room.typeName}
                       </span>
                       <span
-                        className={`size-2 rounded-full ${
+                        className={`size-1.5 sm:size-2 rounded-full shrink-0 ${
                           room.housekeepingStatus === "clean"
                             ? "bg-emerald-500"
                             : room.housekeepingStatus === "dirty"
@@ -170,7 +174,7 @@ export function CalendarGrid({
                   </div>
 
                   {/* Date Grid Cell Area with Overlaid Booking Bars */}
-                  <div className="relative flex flex-1 h-14">
+                  <div className="relative flex flex-1 h-12 sm:h-14">
                     {/* Background Column Grid Lines */}
                     <div className="absolute inset-0 flex pointer-events-none">
                       {dateColumns.map((col) => (
@@ -251,16 +255,17 @@ export function CalendarGrid({
                           }`}
                           title={`${stay.guestName} (${stay.checkIn} to ${stay.checkOut})`}
                         >
-                          <div className="flex items-center gap-1.5 truncate">
+                          <div className="flex items-center gap-1 truncate">
                             {isCheckedIn && (
-                              <span className="size-1.5 rounded-full bg-primary shrink-0 animate-pulse" />
+                              <span className="size-1.5 rounded-full bg-primary shrink-0 animate-pulse hidden sm:block" />
                             )}
-                            <span className="text-xs font-bold truncate">
-                              {stay.guestName}
+                            <span className="text-[10px] sm:text-xs font-bold truncate">
+                              {stay.guestName.split(" ")[0]}
+                              <span className="hidden sm:inline"> {stay.guestName.split(" ").slice(1).join(" ")}</span>
                             </span>
                           </div>
 
-                          <div className="flex items-center gap-1 shrink-0 ml-1 text-xs font-normal opacity-75">
+                          <div className="hidden sm:flex items-center gap-1 shrink-0 ml-1 text-xs font-normal opacity-75">
                             <span>{stay.nights}n</span>
                           </div>
                         </div>

@@ -34,6 +34,18 @@ export function CalendarView({
   const [viewMode, setViewMode] = useState<CalendarViewMode>("14");
   const [selectedStay, setSelectedStay] = useState<BookingStay | null>(null);
 
+  // Auto-switch to 7-day view on small screens
+  useEffect(() => {
+    const check = () => {
+      if (window.innerWidth < 640) {
+        setViewMode((prev) => (prev === "14" || prev === "30" ? "7" : prev));
+      }
+    };
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
   const [filters, setFilters] = useState<CalendarFilters>({
     floor: "all",
     roomType: "all",
