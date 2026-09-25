@@ -166,7 +166,7 @@ export function SearchBox() {
 
             {/* Guest dropdown */}
             {guestOpen && (
-              <div className="absolute top-full left-0 right-0 mt-2 z-50 glass-panel rounded-srok-lg p-4 shadow-2xl border border-glass-border min-w-[200px]">
+              <div className="absolute top-full left-0 right-0 mt-2 z-50 bg-card/98 dark:bg-zinc-950/98 rounded-srok-xl p-4 shadow-2xl border border-border backdrop-blur-2xl min-w-[220px]">
                 <GuestCounter
                   label="Adults"
                   value={adults}

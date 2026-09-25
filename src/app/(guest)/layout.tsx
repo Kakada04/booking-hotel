@@ -8,7 +8,7 @@ export default function GuestLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground">
+    <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-clip">
       {/* Route Progress Indicator */}
       <RouteProgress />
       {/* Guest Navigation Header */}
