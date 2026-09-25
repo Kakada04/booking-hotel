@@ -1,0 +1,297 @@
+[
+  {
+    "id": "room-101",
+    "roomNumber": "101",
+    "name": "Deluxe King Garden",
+    "typeId": "type-deluxe-king",
+    "typeName": "Deluxe King Room",
+    "floor": 1,
+    "capacity": {
+      "adults": 2,
+      "children": 1
+    },
+    "bedType": "1 King Bed",
+    "pricePerNight": 75,
+    "status": "available",
+    "housekeepingStatus": "clean",
+    "amenities": [
+      "High-speed Wi-Fi",
+      "Garden View Balcony",
+      "Rain Shower",
+      "Smart TV 55\"",
+      "Mini Bar",
+      "Air Conditioning",
+      "Safety Deposit Box"
+    ],
+    "description": "Spacious ground-floor Deluxe King room featuring direct views of our lush tropical courtyard garden, plush king-sized mattress, and custom teak furnishings.",
+    "images": [
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
+    ],
+    "keycardId": "KC-101-A",
+    "lastCleaned": "2026-09-25T09:30:00Z"
+  },
+  {
+    "id": "room-102",
+    "roomNumber": "102",
+    "name": "Deluxe Twin Courtyard",
+    "typeId": "type-deluxe-twin",
+    "typeName": "Deluxe Twin Room",
+    "floor": 1,
+    "capacity": {
+      "adults": 2,
+      "children": 1
+    },
+    "bedType": "2 Twin Beds",
+    "pricePerNight": 70,
+    "status": "occupied",
+    "housekeepingStatus": "clean",
+    "amenities": [
+      "High-speed Wi-Fi",
+      "Courtyard Patio",
+      "Rain Shower",
+      "Smart TV 50\"",
+      "Work Desk",
+      "Coffee & Tea Maker"
+    ],
+    "description": "Ideal for colleagues or friends traveling together, featuring two comfortable single beds with artisan linens and garden access.",
+    "images": [
+      "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80"
+    ],
+    "currentGuest": {
+      "name": "Dara Chan",
+      "phone": "+855 12 889 900",
+      "checkIn": "2026-09-24",
+      "checkOut": "2026-09-27",
+      "bookingCode": "BK-2026-8819"
+    },
+    "keycardId": "KC-102-B",
+    "lastCleaned": "2026-09-24T14:00:00Z"
+  },
+  {
+    "id": "room-103",
+    "roomNumber": "103",
+    "name": "Standard Queen",
+    "typeId": "type-standard-queen",
+    "typeName": "Standard Queen Room",
+    "floor": 1,
+    "capacity": {
+      "adults": 2,
+      "children": 0
+    },
+    "bedType": "1 Queen Bed",
+    "pricePerNight": 55,
+    "status": "dirty",
+    "housekeepingStatus": "dirty",
+    "amenities": [
+      "High-speed Wi-Fi",
+      "Walk-in Shower",
+      "Smart TV 43\"",
+      "Mini Fridge",
+      "Air Conditioning"
+    ],
+    "description": "Comfortable and cozy room with premium bedding, modern shower amenities, and peaceful interior courtyard ambiance.",
+    "images": [
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80"
+    ],
+    "keycardId": "KC-103-A",
+    "lastCleaned": "2026-09-23T11:00:00Z"
+  },
+  {
+    "id": "room-201",
+    "roomNumber": "201",
+    "name": "Executive Ocean View Suite",
+    "typeId": "type-executive-suite",
+    "typeName": "Executive Suite",
+    "floor": 2,
+    "capacity": {
+      "adults": 2,
+      "children": 2
+    },
+    "bedType": "1 King Bed + Sofa Bed",
+    "pricePerNight": 140,
+    "status": "reserved",
+    "housekeepingStatus": "clean",
+    "amenities": [
+      "Panoramic Sea View Balcony",
+      "Deep Soaking Bathtub",
+      "Espresso Machine",
+      "High-speed Wi-Fi",
+      "Lounge Area with Sofa",
+      "Smart TV 65\"",
+      "Bathrobes & Slippers"
+    ],
+    "description": "Top-tier suite on the second floor offering expansive views of the coastline, private balcony, marble bathroom with soaking tub, and separate seating lounge.",
+    "images": [
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80"
+    ],
+    "currentGuest": {
+      "name": "Sokha Rath",
+      "phone": "+855 17 554 321",
+      "checkIn": "2026-09-25",
+      "checkOut": "2026-09-28",
+      "bookingCode": "BK-2026-9042"
+    },
+    "keycardId": "KC-201-A",
+    "lastCleaned": "2026-09-25T08:15:00Z"
+  },
+  {
+    "id": "room-202",
+    "roomNumber": "202",
+    "name": "Deluxe King Balcony",
+    "typeId": "type-deluxe-king",
+    "typeName": "Deluxe King Room",
+    "floor": 2,
+    "capacity": {
+      "adults": 2,
+      "children": 1
+    },
+    "bedType": "1 King Bed",
+    "pricePerNight": 85,
+    "status": "available",
+    "housekeepingStatus": "clean",
+    "amenities": [
+      "Private Sun Balcony",
+      "High-speed Wi-Fi",
+      "Rain Shower",
+      "Smart TV 55\"",
+      "Mini Bar",
+      "Laptop Safe"
+    ],
+    "description": "Elevated Deluxe King room on the second floor with an open terrace balcony overlooking the resort pool and palms.",
+    "images": [
+      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80"
+    ],
+    "keycardId": "KC-202-C",
+    "lastCleaned": "2026-09-25T10:10:00Z"
+  },
+  {
+    "id": "room-203",
+    "roomNumber": "203",
+    "name": "Deluxe Twin Balcony",
+    "typeId": "type-deluxe-twin",
+    "typeName": "Deluxe Twin Room",
+    "floor": 2,
+    "capacity": {
+      "adults": 2,
+      "children": 1
+    },
+    "bedType": "2 Twin Beds",
+    "pricePerNight": 80,
+    "status": "occupied",
+    "housekeepingStatus": "clean",
+    "amenities": [
+      "Private Balcony",
+      "High-speed Wi-Fi",
+      "Rain Shower",
+      "Smart TV 50\"",
+      "Mini Bar"
+    ],
+    "description": "Twin room with elevated view of the resort gardens, modern acoustic insulation, and high-thread-count Egyptian cotton linens.",
+    "images": [
+      "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80"
+    ],
+    "currentGuest": {
+      "name": "Marcus Vance",
+      "phone": "+1 415 555 2671",
+      "checkIn": "2026-09-23",
+      "checkOut": "2026-09-26",
+      "bookingCode": "BK-2026-7731"
+    },
+    "keycardId": "KC-203-A",
+    "lastCleaned": "2026-09-24T15:20:00Z"
+  },
+  {
+    "id": "room-204",
+    "roomNumber": "204",
+    "name": "Family Studio",
+    "typeId": "type-family-suite",
+    "typeName": "Family Studio",
+    "floor": 2,
+    "capacity": {
+      "adults": 4,
+      "children": 2
+    },
+    "bedType": "2 Queen Beds",
+    "pricePerNight": 125,
+    "status": "cleaning",
+    "housekeepingStatus": "cleaning",
+    "amenities": [
+      "2 Queen Beds",
+      "Living Corner",
+      "Kitchenette & Microwave",
+      "Double Vanities",
+      "Smart TV 55\"",
+      "High-speed Wi-Fi"
+    ],
+    "description": "Spacious family layout with dual queen beds, dining nook, microwave, and expansive bathroom with twin vanity stations.",
+    "images": [
+      "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80"
+    ],
+    "keycardId": "KC-204-B",
+    "lastCleaned": "2026-09-24T09:00:00Z"
+  },
+  {
+    "id": "room-301",
+    "roomNumber": "301",
+    "name": "Penthouse Sky Pool Villa",
+    "typeId": "type-penthouse",
+    "typeName": "Presidential Penthouse",
+    "floor": 3,
+    "capacity": {
+      "adults": 4,
+      "children": 2
+    },
+    "bedType": "2 King Beds",
+    "pricePerNight": 280,
+    "status": "available",
+    "housekeepingStatus": "clean",
+    "amenities": [
+      "Private Rooftop Plunge Pool",
+      "360-degree Sunset Horizon",
+      "Personal Butler Service",
+      "Sonos Sound System",
+      "Wine Cellar & Bar",
+      "Jacuzzi Spa Tub",
+      "Walk-in Dressing Room"
+    ],
+    "description": "Our signature luxury residence commanding the entire top tier with a private infinity plunge pool, outdoor cabana, gourmet dining suite, and panoramic skyline vistas.",
+    "images": [
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80"
+    ],
+    "keycardId": "KC-301-VIP",
+    "lastCleaned": "2026-09-25T11:00:00Z"
+  },
+  {
+    "id": "room-302",
+    "roomNumber": "302",
+    "name": "Sky King Suite",
+    "typeId": "type-executive-suite",
+    "typeName": "Executive Suite",
+    "floor": 3,
+    "capacity": {
+      "adults": 2,
+      "children": 1
+    },
+    "bedType": "1 King Bed",
+    "pricePerNight": 160,
+    "status": "maintenance",
+    "housekeepingStatus": "dirty",
+    "amenities": [
+      "Private Sky Terrace",
+      "Bathtub with Sky View",
+      "High-speed Wi-Fi",
+      "Soundproof Glass",
+      "Smart TV 65\""
+    ],
+    "description": "High-altitude suite currently undergoing scheduled air conditioning unit filter upgrades and terrace teak seal maintenance.",
+    "images": [
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80"
+    ],
+    "keycardId": "KC-302-A",
+    "lastCleaned": "2026-09-22T16:00:00Z"
+  }
+]
