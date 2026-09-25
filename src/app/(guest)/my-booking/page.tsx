@@ -1,10 +1,11 @@
+import type { Metadata } from "next";
+import { MyBookingSearch } from "@/features/guest/my-booking/my-booking-search";
+
+export const metadata: Metadata = {
+  title: "My Booking — SrokHotel",
+  description: "Find and manage your hotel reservation at SrokHotel.",
+};
+
 export default function MyBookingSearchPage() {
-  return (
-    <div className="container mx-auto p-6 space-y-4">
-      <h1 className="text-2xl font-bold tracking-tight">My Booking Search</h1>
-      <p className="text-sm text-muted-foreground">
-        Full page layout (No modals for CRUD/Detail workflows).
-      </p>
-    </div>
-  );
+  return <MyBookingSearch />;
 }
